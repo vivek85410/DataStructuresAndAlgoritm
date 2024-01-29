@@ -1,0 +1,29 @@
+code link - https://www.codingninjas.com/studio/problems/square-root-integral_893351?leftPanelTabValue=PROBLEM&customSource=studio_nav
+
+
+
+long long int binarySqrt(int n){
+        int s = 0;
+        int e = n;
+        long long int mid = s + (e-s)/2;
+        int ans = -1;
+        while(s<=e){
+            long long int sqrt = mid*mid;
+            if(sqrt == n){
+                return mid;
+            }
+            else if(sqrt>n){
+                e = mid-1;
+            }
+            else{
+                ans = mid;
+                s = mid+1;
+            }
+            mid = s + (e-s)/2;
+        }
+    return ans;
+    }
+int floorSqrt(int n)
+{
+    return binarySqrt(n);
+}
