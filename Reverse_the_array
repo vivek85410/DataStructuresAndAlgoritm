@@ -1,0 +1,13 @@
+code link - https://www.codingninjas.com/studio/problems/reverse-the-array_1262298?utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_5&leftPanelTabValue=PROBLEM&customSource=studio_nav
+
+
+void reverseArray(vector<int> &arr , int m){
+    int n = arr.size();
+    int s = 1+m;
+    int e = n-1;
+    while(s<=e){
+        swap(arr[s],arr[e]);
+        s++;
+        e--;
+    }     	
+}
