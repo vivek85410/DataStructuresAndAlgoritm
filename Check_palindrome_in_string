@@ -1,0 +1,27 @@
+code link - https://www.codingninjas.com/studio/problems/check-if-the-string-is-a-palindrome_1062633?utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_5&leftPanelTabValue=PROBLEM
+
+
+#include <bits/stdc++.h> 
+string Lowercase(string s){
+   s.erase(remove_if(s.begin(), s.end(),[](unsigned char c) { return !isalnum(c);}),s.end()); 
+   for (auto& x : s) { 
+        x = tolower(x); 
+    } 
+    return s;
+}
+
+bool checkPalindrome(string s)
+{   string palindromeWord = Lowercase(s);
+    int st = 0;
+    int e = palindromeWord.size()-1;
+    while(st<=e){
+        if(palindromeWord[st] != palindromeWord[e]){
+            return 0;
+        }
+        else{
+            st++;
+            e--;
+        }
+    }
+    return 1;
+}
