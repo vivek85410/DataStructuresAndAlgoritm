@@ -1,0 +1,18 @@
+code link - https://www.geeksforgeeks.org/problems/reverse-a-string/1
+
+
+class Solution
+{
+    public:
+    string reverseWord(string str)
+    {
+        // Your code goes here
+        int start=0,end=str.length()-1;
+        while(start<=end){
+            swap(str[start],str[end]);
+            start++;
+            end--;
+        }
+        return str;
+    }
+};
