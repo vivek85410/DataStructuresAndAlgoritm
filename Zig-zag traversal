@@ -1,0 +1,31 @@
+code link - https://www.codechef.com/practice/course/matrices/MATRICES/problems/MATZIGZAG
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n,m;
+    cin>>n>>m;
+	int arr[n][m];
+	for(int i=0;i<n;i++){
+	    for(int j=0;j<m;j++){
+	        cin>>arr[i][j];
+	    }
+	}
+	int startingRow = 0;
+	int endingCol = m-1;
+	for(int i=0;i<n;i++){
+	    if(i%2==0){
+	        for(int j=startingRow;j<=endingCol;j++){
+	            cout<<arr[i][j]<<" ";
+	        }
+	    }
+	    else{
+	        for(int j=endingCol;j>=0;j--){
+	            cout<<arr[i][j]<<" ";
+	        }
+	    }
+	}
+return 0;
+}
