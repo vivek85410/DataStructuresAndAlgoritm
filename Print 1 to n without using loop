@@ -1,0 +1,23 @@
+code link - https://www.geeksforgeeks.org/print-1-to-n-without-using-loops/
+
+#include<iostream>
+using namespace std;
+void printsum(int n){
+    // base case
+    if(n == 0)
+        return;
+    if(n>0){
+        cout<<n<<endl;
+        printsum(n-1);
+    }
+}
+
+int main(){
+
+int n;
+cin>>n;
+cout<<endl;
+
+printsum(n);
+return 0;
+}
