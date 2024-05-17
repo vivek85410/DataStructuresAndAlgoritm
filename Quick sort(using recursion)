@@ -1,0 +1,51 @@
+code link - https://www.naukri.com/code360/problems/quick-sort_983625?leftPanelTab=0&utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_15&leftPanelTabValue=PROBLEM
+
+
+#include <bits/stdc++.h> 
+int findpivotplace(vector<int>& arr,int s,int e){
+    int count = 0;
+    int pivot = arr[s];
+    for(int i=s+1;i<=e;i++){
+        if(arr[i]<=pivot){
+            count++;
+        }
+    }
+    int pivotindex = s+count;
+    swap(arr[s],arr[pivotindex]);
+
+    int i = s;
+    int j = e;
+    while(i<pivotindex && j>pivotindex){
+        while(arr[i]<=arr[pivotindex]){
+            i++;
+        }
+        while(arr[j]>arr[pivotindex]){
+            j--;
+        }
+        if(i<pivotindex && j>pivotindex){
+            swap(arr[i++],arr[j--]);
+        }
+    }
+    return pivotindex;
+}
+
+void sort(vector<int>& arr,int s,int e){
+    // base case
+    if(s>=e){
+        return;
+    }
+
+    int p = findpivotplace(arr,s,e);
+    // sort the left part
+    sort(arr,s,p-1);
+
+    // sort the right part
+    sort(arr,p+1,e); 
+}
+vector<int> quickSort(vector<int> arr)
+{
+    int s = 0;
+    int e = arr.size()-1;
+    sort(arr,s,e);
+    return arr;
+}
