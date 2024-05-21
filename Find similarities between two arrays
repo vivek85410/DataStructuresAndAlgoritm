@@ -1,0 +1,16 @@
+code link - https://www.naukri.com/code360/problems/find-similarities-between-two-arrays_1229070?interviewProblemRedirection=true&leftPanelTabValue=PROBLEM&count=25&page=1&search=&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+#include <bits/stdc++.h> 
+
+pair < int , int > findSimilarity(vector < int > arr1, vector < int > arr2, int n, int m) 
+{
+	unordered_set<int> s;
+	for(int i : arr1)s.insert(i);
+	for(int i : arr2)s.insert(i);
+
+	int uni= s.size();
+	int common_count = (m+n)-uni;
+
+	return {common_count,uni};  
+}
