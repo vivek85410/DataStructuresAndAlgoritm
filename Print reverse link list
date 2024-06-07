@@ -1,0 +1,10 @@
+code link - https://www.naukri.com/code360/problems/print-reverse-linkedlist_564?interviewProblemRedirection=true&search=Linked&practice_topic%5B%5D=Linked%2520List&leftPanelTabValue=SUBMISSION&count=25&page=1&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+void printReverse(Node *head)
+{
+	if(!head)
+		return;
+	printReverse(head->next);
+	cout<<head->data<<" ";
+}
