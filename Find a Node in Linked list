@@ -1,0 +1,15 @@
+code link - https://www.naukri.com/code360/problems/find-a-node-in-linked-list_625049?interviewProblemRedirection=true&search=Linked&practice_topic%5B%5D=Linked%2520List&leftPanelTabValue=SUBMISSION&count=25&page=1&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+int findNode(Node *head, int n){
+    // Write your code here.
+    int count=0;
+    while(head){
+        if(n == head->data)
+            return count;
+        else
+            count++;
+            head = head->next;
+    }
+    return -1;
+}
