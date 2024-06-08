@@ -1,0 +1,46 @@
+code link - https://www.naukri.com/code360/problems/reverse-list-in-k-groups_983644?leftPanelTab=0%3Fsource%3Dyoutube&campaign=Lovebabbar_codestudio_26thjan&utm_source=youtube&utm_medium=affiliate&utm_campaign=Lovebabbar_codestudio_26thjan&leftPanelTabValue=SUBMISSION
+
+
+int getLength(Node* head){
+    int cnt=0;
+    while(head){
+        cnt++;
+        head=head->next;
+    }
+    return cnt;
+}
+
+Node* kReverse(Node* head, int k) {
+    
+    // base case
+    if(head==NULL){
+        return NULL;
+    }
+    
+    if(getLength(head)<k){
+        return head;
+    }
+
+    // reverse first k node
+    Node* next = NULL;
+    Node*curr = head;
+    Node*prev = NULL;
+    int count=0;
+
+    while(curr!=NULL && count<k){
+        next = curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+        count++;
+    }
+
+    //recursive call for other groups
+    if(next!=NULL){
+        head->next=kReverse(next,k);
+    }
+
+    //return head of reverse list
+    return prev;
+
+}
