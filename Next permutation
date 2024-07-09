@@ -1,0 +1,12 @@
+code link - https://www.geeksforgeeks.org/problems/next-permutation5226/1
+
+
+class Solution{
+public:
+    vector<int> nextPermutation(int N, vector<int> arr){
+        bool ans = next_permutation(arr.begin(),arr.end());
+        if(ans = true){
+            return arr;
+        }
+    }
+};
