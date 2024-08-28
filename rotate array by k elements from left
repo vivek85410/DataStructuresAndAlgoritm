@@ -1,0 +1,30 @@
+code link - https://takeuforward.org/data-structure/rotate-array-by-k-elements-block-swap-algorithm/
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+void solve(vector<int>&arr,int k){
+    // reversing first k part
+    reverse(arr.begin(),arr.begin()+k);
+
+    // reversing remaining parts left
+    reverse(arr.begin()+k,arr.end());
+
+    //reversing all the array
+
+    reverse(arr.begin(),arr.end());
+}
+
+int main(){
+
+    vector<int> arr = {1,2,3,4,5,6,7};
+    int k = 3;
+    solve(arr,k);
+    for(int i=0;i<arr.size();i++){
+        cout<<arr[i]<<endl;
+    }
+return 0;
+}
