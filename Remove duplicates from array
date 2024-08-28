@@ -1,0 +1,16 @@
+code link - https://www.naukri.com/code360/problems/remove-duplicates-from-sorted-array_1102307?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&leftPanelTabValue=PROBLEM
+
+
+#include<bits/stdc++.h>
+
+int removeDuplicates(vector<int> &arr, int n) {
+	set<int>ans;
+	int count=0;
+	for(int i=0;i<n;i++){
+		ans.insert(arr[i]);		
+	}
+	for(int i=0;i<ans.size();i++){
+		count++;
+	}
+	return count;
+}
