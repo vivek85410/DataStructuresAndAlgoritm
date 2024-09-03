@@ -1,0 +1,31 @@
+code link - https://www.naukri.com/code360/problems/check-armstrong_589?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
+
+
+#include<bits/stdc++.h>
+
+bool checkArmstrong(int n){
+	int count=0;
+	int ans = n, original_no = n;
+	//total count of nos present in n;
+	while(n>0){
+		count++;
+		n = n/10;
+	}
+
+	//detech every no ans sum to its power 
+	// of count;
+
+	int sum = 0;
+	while(ans>0){
+		int rem = ans%10;
+		sum+=pow(rem,count);
+		ans = ans/10;
+	}
+
+	if(original_no == sum){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
