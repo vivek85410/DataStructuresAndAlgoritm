@@ -16,5 +16,13 @@ int main(){
     cin>>n>>r;
     int ans = factorial(n)/factorial(n-r);
     cout<<ans<<endl;
+    /*
+    int ans = 1;
+	for (int i = n; i >= n - r + 1; i--) {
+		ans *= i;
+	}
+	cout << ans;
+    
+    */
 return 0;
 }
