@@ -1,0 +1,13 @@
+code link - https://www.naukri.com/code360/problems/remove-duplicates-recursively_5849?interviewProblemRedirection=true&company%5B%5D=Capegemini%2520Consulting%2520India%2520Private%2520Limited&company%5B%5D=Capgemini&company%5B%5D=Capgemini%2520India%2520Pvt.%2520Ltd.&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION&count=25&page=1&search=&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+#include<bits/stdc++.h>
+
+void removeConsecutiveDuplicates(char *input) {
+	int j=0;
+    for(int i=0;input[i]!='\0';i++){
+        if(input[i]!=input[i+1]){
+            input[j++]=input[i];
+        }
+    }
+    input[j]='\0';
+}
