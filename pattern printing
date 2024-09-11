@@ -1,0 +1,20 @@
+code link  - https://www.naukri.com/code360/problems/pattern-printing_4530778?interviewProblemRedirection=true&company%5B%5D=Capgemini%2520India%2520Pvt.%2520Ltd.&company%5B%5D=Capgemini&company%5B%5D=Capegemini%2520Consulting%2520India%2520Private%2520Limited&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION&count=25&page=3&search=&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+#include <bits/stdc++.h> 
+void printPattern(int m, int n) {
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(i==0 || i==m-1){
+                cout<<"*";
+            }
+            else if(j==0 || j==n-1){
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+}
