@@ -2,10 +2,30 @@ code link - https://www.naukri.com/code360/problems/one-iteration_3116723?interv
 
 
 #include <bits/stdc++.h> 
-int oneIteration(vector<int> A)
+int oneIteration(vector<int> A)           // time complexity = O(N*N)
 {
     sort(A.begin(),A.end());
     int l = A.size();
     int ans = A[l-1]+A[l-2];
     return ans;   
+}
+
+// second method
+
+#include <bits/stdc++.h> 
+int oneIteration(vector<int> A)
+{
+    int max=INT_MIN;
+    int secmax=INT_MIN;
+    int l = A.size();
+    for(int i=0;i<l;i++){                       time complexity = O(N)
+        if(A[i]>max){
+            secmax=max;
+            max=A[i];
+        }
+        else if(A[i]>secmax && A[i]<max){
+            secmax=A[i];
+        }
+    }
+    return max+secmax;   
 }
