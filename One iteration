@@ -1,0 +1,11 @@
+code link - https://www.naukri.com/code360/problems/one-iteration_3116723?interviewProblemRedirection=true&company%5B%5D=Capegemini%2520Consulting%2520India%2520Private%2520Limited&company%5B%5D=Capgemini&company%5B%5D=Capgemini%2520India%2520Pvt.%2520Ltd.&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION&count=25&page=4&search=&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+#include <bits/stdc++.h> 
+int oneIteration(vector<int> A)
+{
+    sort(A.begin(),A.end());
+    int l = A.size();
+    int ans = A[l-1]+A[l-2];
+    return ans;   
+}
