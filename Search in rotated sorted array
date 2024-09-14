@@ -1,0 +1,34 @@
+code link - https://www.naukri.com/code360/problems/search-in-rotated-sorted-array_630450?interviewProblemRedirection=true&company%5B%5D=Capegemini%20Consulting%20India%20Private%20Limited&company%5B%5D=Capgemini%20India%20Pvt.%20Ltd.&company%5B%5D=Capgemini&difficulty%5B%5D=Medium&leftPanelTabValue=PROBLEM
+
+
+
+int search(int* arr, int n, int key) {
+    
+    //binary search
+    int mid,start=0,end = n-1;
+    mid = start + (end-start)/2;
+    while(start<=mid){
+        if(arr[mid]==key){
+            return mid;
+        }
+
+        else if(arr[start]<=arr[mid]){
+            if(arr[start] <= key && key<=arr[mid]){
+                end=mid-1;
+            }
+            else{
+                start=mid+1;
+            }
+        }
+        else{
+            if(arr[mid]<=key && key <= arr[end]){
+                start = mid+1;
+            }
+            else{
+                end=mid-1;
+            }
+        }
+        mid = start + (end-start)/2;
+    }
+    return -1;
+}
