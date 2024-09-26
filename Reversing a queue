@@ -1,0 +1,20 @@
+code link - https://www.naukri.com/code360/problems/reversing-a-queue_982934?interviewProblemRedirection=true&search=queue&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION&count=25&page=1&sort_entity=order&sort_order=ASC&customSource=studio_nav
+          - https://www.geeksforgeeks.org/problems/queue-reversal/1
+
+
+
+queue<int> reverseQueue(queue<int> q)
+{
+    stack<int>ans;
+    while(!q.empty()){
+        int val = q.front();
+        q.pop();
+        ans.push(val);
+    }
+    while(!ans.empty()){
+        int val = ans.top();
+        ans.pop();
+        q.push(val);
+    }
+    return q;
+}
