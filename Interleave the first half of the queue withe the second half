@@ -1,0 +1,28 @@
+code link - https://www.naukri.com/code360/problems/interleave-the-first-half-of-the-queue-with-the-second-half_1169450?interviewProblemRedirection=true&search=queue&difficulty%5B%5D=Easy&leftPanelTabValue=PROBLEM&count=25&page=1&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+void interLeaveQueue(queue < int > & q) {
+    queue<int> ans;
+    
+    int n = q.size();
+    // first we pop up half of elements to new queue.
+    for(int i=0;i<n/2;i++){
+        int val = q.front();
+        q.pop();
+        ans.push(val);
+    }
+
+    // now push each elements one by one from new queue as well as 
+    // original queue to original queue.
+
+    while(!ans.empty()){
+        int val = ans.front();
+        ans.pop();
+        q.push(val);
+
+        int value = q.front();
+        q.pop();
+        q.push(value);
+    }
+    
+}
