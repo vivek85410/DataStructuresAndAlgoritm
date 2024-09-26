@@ -1,0 +1,26 @@
+code link - https://www.naukri.com/code360/problems/reverse-the-first-k-elements-of-a-queue_1164269?interviewProblemRedirection=true&search=queue&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION&count=25&page=1&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+#include <bits/stdc++.h> 
+void reverse(queue<int> &q,int k)
+{
+    stack<int>ans;
+    int i=0;
+    while(i<k){
+        int element = q.front();
+        q.pop();
+        ans.push(element);
+        i++;
+    }
+    while(!ans.empty()){
+        int element = ans.top();
+        ans.pop();
+        q.push(element);
+    }
+    int t = q.size()-k;
+    while(t--){
+        int sol = q.front();
+        q.pop();
+        q.push(sol);
+    }
+}
