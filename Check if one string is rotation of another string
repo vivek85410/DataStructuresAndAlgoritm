@@ -1,0 +1,23 @@
+code link - https://www.naukri.com/code360/problems/check-if-one-string-is-a-rotation-of-another-string_1115683?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&page=8&search=&company%5B%5D=Hexaware%2520Technologies&company%5B%5D=Cognizant&company%5B%5D=Cognizant%2520technologies&difficulty%5B%5D=Medium&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+
+
+int isCyclicRotation(string &p, string &q) 
+{
+    int a=0,b=0;
+    string store = p+p;
+    while(a<store.length()){
+        if(store[a]==q[b]){
+            a++;
+            b++;
+
+            if(b==q.length())
+                return true;
+        }
+        else if(b!=0){
+                b=0;
+        }else{
+                a++;
+            }
+    }
+    return false;
+}
