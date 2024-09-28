@@ -1,0 +1,31 @@
+code link - https://www.naukri.com/code360/problems/redundant-brackets_975473?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&page=3&search=&company%5B%5D=Cognizant%2520technologies&company%5B%5D=Cognizant&company%5B%5D=Hexaware%2520Technologies&difficulty%5B%5D=Medium&sort_entity=order&sort_order=ASC&leftPanelTabValue=SUBMISSION&customSource=studio_nav
+
+
+#include <bits/stdc++.h> 
+bool findRedundantBrackets(string &s)
+{
+    int init_bracket=0;
+    int final_bracket=0;
+    stack<int>st;
+    for(int i=0;i<s.length();i++){
+        if(s[i] =='(' || s[i]=='+' || s[i]=='-' ||s[i]=='*' ||s[i]=='/'){
+            st.push(s[i]);
+        }else{
+            if(s[i]==')'){
+                bool Redundant=true;
+                while(st.top()!='('){
+                    char element = st.top();
+                    if(element=='+' || element=='-' || element=='*' || element=='/'){
+                        Redundant=false;
+                    }
+                    st.pop();
+                }
+                if(Redundant==true){
+                    return true;
+                }
+                st.pop();
+            }
+        }
+    }
+    return false;
+}
