@@ -1,0 +1,25 @@
+code link - https://www.naukri.com/code360/problems/compress-the-string_526?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&page=1&search=&company%5B%5D=Hexaware%2520Technologies&sort_entity=order&sort_order=ASC&leftPanelTabValue=SUBMISSION&customSource=studio_nav
+
+
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+
+string getCompressedString(string &input) {
+    string ans;
+    int count=1;
+    for(int i=1;i<=input.size();i++){
+        if(i!=input.size() && input[i]==input[i-1]){
+            count++;
+        }
+        else{
+            if(count==1){
+                ans+=input[i-1];
+            }else{
+                ans+=input[i-1]+to_string(count);
+            }
+            count=1;
+        }        
+    }
+    return ans;
+}
