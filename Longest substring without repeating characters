@@ -1,0 +1,24 @@
+code link - Codingninjas.com/codestudio/problems/subarray-with-maximum-product_6890008?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse
+
+
+#include <bits/stdc++.h> 
+int uniqueSubstrings(string input)
+{
+    unordered_set<char>ans;
+    int sol=0;
+    int i=0,j=0;
+    while(i<input.size()){
+        if(ans.find(input[i])==ans.end()){
+            ans.insert(input[i]);
+            i++;
+        }else{
+            sol = max(sol,(int)ans.size());
+            ans.erase(input[j]);
+            j++;
+        }
+    }
+    if(sol<(int)ans.size()){
+        return sol = ans.size();
+    }
+    return sol;
+}
