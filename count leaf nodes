@@ -1,0 +1,26 @@
+code link - 
+
+
+void inorder(BinaryTreeNode<int> *root, int &cnt){
+    // base case
+    if(root==NULL){
+        return;
+    }
+
+    // left node case
+    inorder(root->left,cnt);
+
+    // count case checking
+    if(root->left==NULL && root->right==NULL){
+        cnt++;
+    }
+
+    //right node case
+    inorder(root->right,cnt);
+}
+
+int noOfLeafNodes(BinaryTreeNode<int> *root){
+    int count = 0;
+    inorder(root,count);
+    return count;
+}
