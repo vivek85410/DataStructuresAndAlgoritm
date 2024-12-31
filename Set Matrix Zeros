@@ -1,0 +1,31 @@
+code link - https://www.naukri.com/code360/problems/set-matrix-zeros_3846774?interviewProblemRedirection=true&company%5B%5D=Deloitte&company%5B%5D=HCL%20Technologies&company%5B%5D=HCLTechnology&company%5B%5D=HCL%20INFOSYSTEM&difficulty%5B%5D=Easy&leftPanelTabValue=SUBMISSION
+
+
+#include <bits/stdc++.h>
+
+void setZeros(vector<vector<int>> &matrix)
+{
+	vector<vector<int>>ans=matrix;
+	int row = matrix.size();
+	int col = matrix[0].size();
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            if(matrix[i][j]==0)
+            {
+                int var=i;
+                int car=j;
+                for(int a=0;a<col;a++)
+                {
+                    ans[var][a]=0;
+                }
+                for(int b=0;b<row;b++)
+                {
+                    ans[b][car]=0;
+                }
+            }
+        }
+    }
+   matrix=ans;
+}
