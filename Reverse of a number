@@ -1,0 +1,26 @@
+code link - https://www.naukri.com/code360/problems/reverse-of-a-number_624652?interviewProblemRedirection=true&company%5B%5D=HCL%2520INFOSYSTEM&company%5B%5D=HCLTechnology&company%5B%5D=HCL%2520Technologies&company%5B%5D=Deloitte&difficulty%5B%5D=Easy&leftPanelTabValue=SOLUTION&count=25&page=4&search=&sort_entity=order&sort_order=ASC&customSource=studio_nav
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int ans=0;
+	while(n>0){
+		if(n%10==0){
+			if(ans==0){
+				n=n/10;
+				continue;
+			}else{
+				ans= ans*10+n%10;
+				n=n/10;
+			}
+		}else{
+			ans= ans*10+n%10;
+			n = n/10;
+		}
+	}
+	cout<<ans<<endl;
+}
