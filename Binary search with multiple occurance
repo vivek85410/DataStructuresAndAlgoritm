@@ -1,0 +1,33 @@
+code link - https://www.geeksforgeeks.org/problems/binary-search-1587115620/1?page=1&category=Arrays,Strings&difficulty=Easy,Medium&sortBy=submissions
+
+
+// User function template for C++
+
+class Solution {
+  public:
+    int binarysearch(vector<int> &arr, int k) {
+        int start = 0;
+        int end = arr.size()-1;
+        int mid = start+(end-start) / 2;
+        while(start<=end){
+            if(arr[mid]==k){
+                for(int i=start;i<=mid;i++){
+                    if(arr[i]==k){
+                        return i;
+                    }
+                }
+                //return mid;
+            }
+            else {
+                if(k<arr[mid]){
+                    end = mid-1;
+                }
+                else{
+                    start = mid+1;
+                    }
+            }
+            mid = start+(end-start)/2;
+        }
+        return -1;
+    }
+};
