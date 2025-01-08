@@ -1,0 +1,19 @@
+code link - https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1?page=1&sprint=a663236c31453b969852f9ea22507634&sortBy=submissions
+
+
+class Solution {
+   
+  public:
+    // Function to check if b is a subset of a
+    bool isSubset(vector<int> &a, vector<int> &b) {
+        unordered_set<int>arr(a.begin(), a.end());
+        
+        for(int i:b){
+            if(arr.find(i)==arr.end()){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+};
