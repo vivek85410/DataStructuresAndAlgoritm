@@ -1,0 +1,51 @@
+code link - 
+
+
+time complexity - 0 ms. -----------------------------------
+optimized code
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size()!=t.size())return false;
+        int m[26] = {0};
+        for(int i=0;i<s.size();i++){
+           ++m[s[i]-'a'];
+           --m[t[i]-'a'];
+        }
+        for(int i=0;i<26;++i){
+            if(m[i]!=0)return false;
+        }
+        return true;
+    }
+};
+
+time complexity - 3 ms. ------------------------------------
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size()!=t.size())return false;
+        unordered_map<char,int>mp;
+        for(int i=0;i<s.size();i++){
+            mp[s[i]]++;
+            mp[t[i]]--;
+        }
+        for(auto i:mp){
+            if(i.second!=0)return false;
+        }
+        return true;
+    }
+};
+
+
+time complexity - 7 ms. ------------------------------------
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
+        return s==t;
+    }
+};
