@@ -1,0 +1,37 @@
+code link - https://www.codechef.com/practice/course/strings/STRINGS/problems/DNASTORAGE?tab=statement
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        string s;
+        string result;
+        cin>>s;
+        int i=0;
+        while(i<n){
+            if(s[i]=='0' && s[i+1]=='0'){
+                cout<<'A';
+                i=i+2;
+            }else if(s[i]=='0' && s[i+1]=='1'){
+                cout<<'T';
+                i=i+2;
+            }else if(s[i]=='1' && s[i+1]=='0'){
+                cout<<'C';
+                i=i+2;
+            }else if(s[i]=='1' && s[i+1]=='1'){
+                cout<<'G';
+                i=i+2;
+            }
+        }
+        cout<<endl;
+        
+    }
+
+}
