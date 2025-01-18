@@ -1,0 +1,22 @@
+code link - https://www.codechef.com/practice/course/tcs-nqt-questions/TCSNQTC/problems/TCSNQTCP06?tab=statement
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int v, w;
+        cin >> v >> w;
+        if (w % 2 != 0 || w<2 || w < v*2 || w > v*4) {
+            cout << "-1" << endl;
+        } else {
+            int tw = (4 * v - w) / 2;
+            int fw = v - tw;
+            cout << tw << " " << fw << endl;
+        }
+    }
+return 0;
+}
