@@ -1,0 +1,35 @@
+code link - https://www.codechef.com/practice/course/tcs-nqt-questions/TCSNQTC/problems/TCSNQTCP04?tab=statement
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Write sumOfOccurences function here
+int sumOfOccurences(string str1, string str2) {
+    
+    map < char, int > result;
+    for (int i = 0; i < str2.length(); i++) {
+        result[str2[i]]++;
+    }
+    
+    int finalsum = 0;
+    for(auto x:result){
+        finalsum += count(str1.begin(),str1.end(),x.first);
+    }
+    
+    return finalsum;
+
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        string str1, str2;
+        cin >> str1;
+        cin >> str2;
+        cout << sumOfOccurences(str1, str2) << "\n";
+    }
+}
