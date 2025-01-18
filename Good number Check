@@ -1,0 +1,31 @@
+code link - https://www.codechef.com/practice/course/tcs-nqt-questions/TCSNQTC/problems/TCSNQTCP05
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void numCheck(int n){
+    int orNum = n;
+    int sum = 0;
+    while(n>0){
+        sum += n%10;
+        n = n/10;
+    }
+    
+    if(orNum%sum==0){
+        cout<<"Good Number"<<endl;
+    }else{
+        cout<<"Bad Number"<<endl;
+    }
+}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    numCheck(n);
+	}
+
+}
