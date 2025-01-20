@@ -1,0 +1,37 @@
+code link - https://www.naukri.com/code360/problems/idempotent-matrix_23004?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&page=1&search=&company%5B%5D=Deloitte&difficulty%5B%5D=Easy&difficulty%5B%5D=Medium&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+
+
+void multiply(int **mat,int **res,int N)
+{
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+            res[i][j]=0;
+            for(int k=0;k<N;k++)
+            {
+                res[i][j]+=mat[i][k]*mat[k][j];
+            }
+        }
+    }
+}
+
+bool CheckIdempotent(int **mat, int N){
+    int **res=new int*[N];
+    for(int i=0;i<N;i++)
+    {
+        res[i]=new int[N];
+    }
+    multiply(mat,res,N);
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+                  if (res[i][j] != mat[i][j]) {
+                    return false;
+                    break;
+                  }
+                }
+    }
+    return true;
+}
