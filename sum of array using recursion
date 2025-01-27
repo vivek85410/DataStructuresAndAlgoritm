@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int sumofarray(int arr[],int n){
+// base case
+    int sum = 0;
+    if(n==0 ){
+        return 0;
+    }
+
+    return arr[n-1] + sumofarray(arr,n-1);
+}
+
+int main(){
+
+int arr[] = {3,2,5,1,6};
+
+cout<<sumofarray(arr,5)<<endl;
+return 0;
+}
