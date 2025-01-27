@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+bool linearSearch(int arr[],int sizee, int k){
+// base case
+    if(sizee==0){
+        return false;
+    }
+    if(arr[0]==k){
+        return true;
+    }else{
+    bool remainingPart = linearSearch(arr+1,sizee-1,k);
+    return remainingPart;
+    }
+}
+
+int main(){
+
+int arr[] = {3,2,5,1,6};
+int sizee = 5;
+int key = 7;
+bool ans = linearSearch(arr,sizee,key);
+if(ans){
+    cout<<"Present"<<endl;
+}else{
+    cout<<"Not Present"<<endl;
+}
+return 0;
+}
