@@ -1,0 +1,23 @@
+code link - https://www.naukri.com/code360/problems/sum-of-even-odd_624650?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&page=2&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=SUBMISSION&customSource=studio_nav
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int oddSum=0;
+	int evenSum = 0;
+	while(n>0){
+		int result = n%10;
+		if(result%2==0){
+			evenSum+=result;
+		}else{
+			oddSum+=result;
+		}
+		n/=10;
+	}
+	cout<<evenSum<< " "<<oddSum<<endl;
+	return 0;
+}
