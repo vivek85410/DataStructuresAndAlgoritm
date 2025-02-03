@@ -1,0 +1,11 @@
+code link - https://www.naukri.com/code360/problems/delete-alternate-nodes_624615?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=SUBMISSION&customSource=studio_nav
+
+
+void deleteAlternateNodes(Node *head) {
+    Node* curr = head;
+    
+    while(curr!=NULL && curr->next!=NULL){
+        curr->next = curr->next->next;
+        curr=curr->next;
+    }
+}
