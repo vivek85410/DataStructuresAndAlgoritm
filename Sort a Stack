@@ -34,3 +34,27 @@ void sortStack(stack<int> &stack)
 
 	sortedInsert(stack,num);
 }
+
+Another approach ---------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void sortStack(stack<int> &s){
+	// first init a vector array to keep the top element
+	vector<int>ans;
+
+	// start a loop to push all the elements to vector
+	while(!s.empty()){
+		ans.push_back(s.top());
+		s.pop();
+	}
+
+	// now sort the array in ascending order
+	sort(ans.rbegin(),ans.rend());
+
+	// now start a loop to push all the vector array elements to stack
+	for(auto i : ans){
+		s.push(i);
+	}
+}
