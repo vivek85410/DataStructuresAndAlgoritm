@@ -4,7 +4,6 @@ code link - https://www.naukri.com/code360/problems/number-pattern_624932?utm_so
 #include<iostream>
 using namespace std;
 
-
 int main(){
 
        /*  Read input as specified in the question.
