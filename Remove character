@@ -1,0 +1,18 @@
+code link - https://www.naukri.com/code360/problems/remove-character_624477?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=SUBMISSION&customSource=studio_nav
+
+
+void removeAllOccurrencesOfChar(char input[], char c) {
+    int n = strlen(input);
+    int i=0;
+    for(int j=0;j<n;j++){
+        if(input[j]==c){
+            continue;
+        }
+
+        input[i] = input[j];
+        i++;
+    }
+    for(int k=i;k<n;k++){
+        input[k]=0;
+    }
+}
