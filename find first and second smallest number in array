@@ -1,0 +1,43 @@
+code link - https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1
+
+
+
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+#include <limits.h>
+#include <random>
+#include <sstream>
+using namespace std;
+
+
+// } Driver Code Ends
+
+class Solution {
+  public:
+    vector<int> minAnd2ndMin(vector<int> &arr) {
+        // smallest of array
+        int first_smallest_number = INT_MAX;
+        int i=0;
+        while(i<=arr.size()-1){
+            if(arr[i]<first_smallest_number){
+                first_smallest_number = arr[i];
+            }
+            i++;
+        }
+        // second smallest number of array
+        int second_smallest_number = INT_MAX;
+        int j = 0;
+        while(j<=arr.size()-1){
+            if(arr[j]>first_smallest_number && arr[j]<second_smallest_number){
+                second_smallest_number = arr[j];
+            }
+            j++;
+        }
+        if(second_smallest_number == INT_MAX){
+            return {-1};
+        }
+        
+        return {first_smallest_number,second_smallest_number};
+        
+    }
+};
