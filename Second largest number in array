@@ -1,0 +1,29 @@
+code link - https://www.geeksforgeeks.org/problems/second-largest3735/1
+
+
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        int n = arr.size();
+        int largest_num = INT_MIN;
+        for(int i=0;i<n;i++){
+            if(arr[i]>largest_num){
+                largest_num = arr[i];
+            }
+        }
+        
+        int secondLargest_num = INT_MIN;
+        for(int i=0;i<n;i++){
+            if(arr[i]>secondLargest_num && arr[i]<largest_num){
+                secondLargest_num = arr[i];
+            }
+        }
+        
+        if(secondLargest_num == INT_MIN){
+            return -1;
+        }
+            return secondLargest_num;
+    }
+};
