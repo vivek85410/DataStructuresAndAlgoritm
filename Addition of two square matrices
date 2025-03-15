@@ -1,0 +1,18 @@
+code link - https://www.geeksforgeeks.org/problems/addition-of-two-square-matrices4916/1
+
+
+
+class Solution {
+public:
+    void Addition(vector<vector<int> >& matrixA, vector<vector<int>>&matrixB) {
+        // addition of two matrices using columns and rows
+        // first get the size of either row or column as it is n*n matrix
+        
+        int n = matrixA.size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                matrixA[i][j] = matrixA[i][j] + matrixB[i][j];
+            }
+        }
+    }
+};
