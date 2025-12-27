@@ -1,0 +1,32 @@
+code link - https://www.geeksforgeeks.org/dsa/maximum-consecutive-ones-or-zeros-in-a-binary-array/
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int maxConsecutive(vector<int>& arr){
+    int n = arr.size();
+   
+    int maxCount = 0, count = 1;
+    for(int i=1;i<n;i++){
+       if(arr[i] == arr[i-1]){
+           count++;
+       }
+       else{
+           maxCount = max(maxCount,count);
+           count = 1;
+       }
+        
+    }
+    
+    return max(maxCount,count);
+    
+}
+
+int main()
+{
+    vector<int> arr = {0, 0, 0, 0, 0, 1, 1};
+    cout<<maxConsecutive(arr)<<endl;
+    return 0;
+}
