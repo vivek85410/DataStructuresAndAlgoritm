@@ -1,0 +1,51 @@
+code link - https://www.geeksforgeeks.org/dsa/find-maximum-product-of-a-triplet-in-array/
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int maxProduct(vector<int>& arr){
+    int n = arr.size();
+    int maxA = INT_MIN, maxB = INT_MIN, maxC = INT_MIN;
+    int minA = INT_MAX, minB = INT_MAX;
+    
+    for(int i=0;i<n;i++){
+        // first find the maximum number
+        if(arr[i]>maxA){
+            maxC = maxB;
+            maxB = maxA;
+            maxA = arr[i];
+        }
+        // next find the second maximum number
+        else if(arr[i]>maxB){
+            maxC = maxB;
+            maxB = arr[i];
+        }
+        // next find the third maximum number
+        else if(arr[i]>maxC){
+            maxC = arr[i];
+        }
+        
+        // Now find the smallest number
+        if(arr[i]<minA){
+            minB = minA;
+            minA = arr[i];
+        }
+        //next find the second smallest number
+        else if(arr[i]<minB){
+            minB = arr[i];
+        }
+        
+    }
+    
+    return max(minA * minB * maxA , maxA * maxB* maxC );
+    
+}
+
+int main()
+{
+    vector<int> arr = {10, 3, 5, 6, 20};
+    cout<<maxProduct(arr)<<endl;
+    return 0;
+}
