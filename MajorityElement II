@@ -1,0 +1,60 @@
+code link - https://www.codechef.com/cpp-online-compiler
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> MajorityElement_II(vector<int> &arr){
+    int n = arr.size();
+    int ele1= -1,ele2 =-1, cnt1 =0, cnt2 =0;
+    for(int ele : arr){
+        
+        if(ele1 == ele){
+            cnt1++;
+        }else if(ele2 == ele){
+            cnt2++;
+        }else if(cnt1 == 0){
+            ele1 = ele;
+            cnt1++;
+        }else if (cnt2 ==0){
+            ele2 = ele;
+            cnt2++;
+        }else{
+            cnt1--;
+            cnt2--;
+        }
+    }    
+        vector<int> result;
+        cnt1 = 0;
+        cnt2 = 0;
+        
+        for(int ele : arr){
+            if(ele1 == ele){
+                cnt1++;
+            }
+            if(ele2 == ele){
+                cnt2++;
+            }
+        }
+        
+        if(cnt1>n/3){
+            result.push_back(ele1);
+        }
+        if(cnt2 >n/3 && ele1 != ele2){
+            result.push_back(ele2);
+        }
+        
+        if(result.size()==2 && result[0]>result[1]){
+            swap(result[0],result[1]);
+        }
+        return result;
+}
+
+int main() {
+	vector<int> arr = {2, 2, 3, 1, 3, 2, 1, 1};
+	vector<int>res = MajorityElement_II(arr);
+	for(int ele : res){
+	    cout<<ele<<" ";
+	}
+return 0;
+}
