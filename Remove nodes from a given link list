@@ -1,0 +1,20 @@
+code link - https://www.codechef.com/practice/course/linked-lists/LINKLISTF/problems/SEARCHLL?tab=statement
+
+
+Node* removeKey(Node* head, int key) {
+    Node* current = head;
+    while(head!=NULL && head->data == key){
+        head = head->next;
+    }
+    if(head == NULL){
+        return NULL;
+    }
+    while(current -> next != NULL){
+        if(current->next->data == key){
+            current->next = current->next->next;
+        }else{
+            current = current -> next;
+        }
+    }
+    return head;
+}
